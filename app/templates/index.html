@@ -6,21 +6,11 @@
     <h1>Welcome back, {{ current_user.username }}</h1>
     <h3>Phone Book</h3>
     <div class="row">
-        {% for add in addresses %}
-        <div class="col-12 col-sm-6 col-md-4">
-            <div class="card">
-                <img src="{{ add.image_url }}" class="card-img-top" alt="{{ add.street }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ add.street }}</h5>
-                    <p class="card-text">{{ add.city }}</p>
-                    <a href="{{ url_for('address_info', address_id=add.id) }}" class="btn btn-primary">More Info</a>
-                </div>
-            </div>
-        </div>
+        {% for item in address %}
+            <p>{{ item.street }}</p>
+            <p>{{ item.city }}, {{ item.state }} {{ item.zipcode }}</p>
         {% endfor %}
     </div>
-
-
 
 {% else %}
     <h1>Phone Book Home Page</h1>
