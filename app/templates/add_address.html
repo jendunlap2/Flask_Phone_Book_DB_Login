@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Add an Address to Phone Book {% endblock %}
+
+{% block content %}
+    <h1>Add Address Here</h1>
+    <form action="" method='post'>
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <fieldset>
+                {{ form.street.label }}
+                {{ form.street(class='form-control', placeholder='Street') }}
+            </fieldset>
+            <fieldset>
+                {{ form.city.label }}
+                {{ form.city(class='form-control', placeholder='City') }}
+            </fieldset>
+            <fieldset>
+                {{ form.state.label }}
+                {{ form.state(class='form-control', placeholder='State') }}
+            </fieldset>
+            <fieldset>
+                {{ form.zipcode.label }}
+                {{ form.zipcode(class='form-control', placeholder='Zip Code') }}
+            </fieldset>
+        </div>
+        {{ form.submit(class='btn btn-outline-success') }}
+    </form>
+{% endblock %}
