@@ -4,12 +4,14 @@
 
 {% if current_user.is_authenticated %}
     <h1>Welcome back, {{ current_user.username }}</h1>
-    <h3>Phone Book</h3>
+    <h3 class="my-4">Phone Book</h3>
     <div class="row">
-        {% for item in address %}
-            <p>{{ item.street }}</p>
-            <p>{{ item.city }}, {{ item.state }} {{ item.zipcode }}</p>
-        {% endfor %}
+        <ul class="list-group">
+            {% for item in addresses %}
+                <li class="list-group-item pt-3"><h3>{{ item.street }}</h3>
+                <p>{{ item.city }}, {{ item.state }} {{ item.zipcode }}</p></li>
+            {% endfor %}
+        </ul>
     </div>
 
 {% else %}
