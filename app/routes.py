@@ -6,8 +6,8 @@ from app.models import User, Address
 
 @app.route('/')
 def index():
-    products = Address.query.all()
-    return render_template('index.html', products=products)
+    addresses = Address.query.all()
+    return render_template('index.html', addresses=addresses)
 
 @app.route('/register', methods=["GET","POST"])
 def register():
